@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+html,
+body {
+  width: 100%;
+  height: 100%; }
+
+body {
+  background-color: #dcdeea;
+  overflow: hidden; }
+
+li {
+  list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: none; }
+
+button {
+  cursor: pointer; }
+
+h1 {
+  font-family: "Engravers MT Std";
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase; }
+  h1.supertitle, h1.quasisupertitle {
+    font-family: "Source Sans Pro";
+    font-size: 33px;
+    font-weight: 100;
+    letter-spacing: 3px; }
+    h1.supertitle a, h1.quasisupertitle a {
+      color: #afc8e6;
+      font-weight: 800; }
+
+h2 {
+  font-family: "Source Sans Pro";
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  text-transform: uppercase; }
+
+p {
+  font-family: "PT Serif";
+  font-size: 16.5px;
+  line-height: 33px;
+  margin-bottom: 40px;
+  margin-left: 44px;
+  width: 600px; }
+  p a {
+    color: #afc8e6;
+    font-weight: 800; }
+  p.narration {
+    font-family: "Source Sans Pro";
+    font-weight: 100; }
+
+div.overlays {
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  display: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4; }
+  div.overlays.active {
+    display: block; }
+  div.overlays button.x {
+    background-color: transparent;
+    border: none;
+    font-family: "Source Sans Pro";
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 100px;
+    outline: none;
+    position: absolute;
+    top: 88px;
+    right: 44px;
+    width: 100px;
+    height: 100px; }
+    div.overlays button.x svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+  div.overlays .overlay {
+    display: none; }
+    div.overlays .overlay.active {
+      display: block; }
+  div.overlays .about h1.supertitle,
+  div.overlays .about h1.quasisupertitle,
+  div.overlays .colophon h1.supertitle,
+  div.overlays .colophon h1.quasisupertitle,
+  div.overlays .contact h1.supertitle,
+  div.overlays .contact h1.quasisupertitle {
+    font-size: 22px;
+    margin: 88px auto;
+    width: 600px; }
+  div.overlays .about h1.supertitle,
+  div.overlays .colophon h1.supertitle,
+  div.overlays .contact h1.supertitle {
+    font-weight: 800; }
+  div.overlays .bios h1.supertitle {
+    margin-left: 44px;
+    margin-top: 88px; }
+  div.overlays .bios h2.subtitle {
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 44px;
+    margin-bottom: 22px;
+    margin-left: 44px; }
+  div.overlays .bios .bio {
+    margin-bottom: 44px; }
+    div.overlays .bios .bio h1, div.overlays .bios .bio h2 {
+      margin-left: 44px; }
+
+header.persist {
+  background-color: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  z-index: 5; }
+  header.persist ul.persist-dropdown {
+    overflow: hidden;
+    position: absolute;
+    top: 44px;
+    width: 320px;
+    height: 0;
+    z-index: 3;
+    transition: all 200ms; }
+    header.persist ul.persist-dropdown.gear-persist-dropdown {
+      left: auto;
+      right: 0; }
+      header.persist ul.persist-dropdown.gear-persist-dropdown.active {
+        height: 181px; }
+    header.persist ul.persist-dropdown.hamburger-persist-dropdown {
+      left: 0;
+      right: auto; }
+      header.persist ul.persist-dropdown.hamburger-persist-dropdown.active {
+        height: 136px; }
+    header.persist ul.persist-dropdown li {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-bottom: 2px dotted white;
+      font-family: "Source Sans Pro";
+      font-size: 11px;
+      font-weight: 100;
+      letter-spacing: 2px;
+      line-height: 44px;
+      padding: 0 22px;
+      text-transform: uppercase;
+      width: 276px;
+      height: 44px; }
+      header.persist ul.persist-dropdown li:first-child {
+        border-top: 2px dotted white; }
+  header.persist .title-wrapper {
+    margin-left: -26px;
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    width: 52px;
+    height: 22px; }
+    header.persist .title-wrapper svg {
+      width: 100%;
+      height: 100%; }
+  header.persist div.button-wrapper {
+    position: absolute;
+    top: 0;
+    width: 44px;
+    height: 44px; }
+    header.persist div.button-wrapper.active .dropdown-marker {
+      transform: rotate(135deg); }
+    header.persist div.button-wrapper .dropdown-marker {
+      border-bottom: 1px solid black;
+      border-left: 1px solid black;
+      position: absolute;
+      bottom: 14.5px;
+      transform: rotate(-45deg);
+      width: 5.5px;
+      height: 5.5px;
+      transition: transform 200ms; }
+    header.persist div.button-wrapper.gear {
+      left: auto;
+      right: 22px; }
+      header.persist div.button-wrapper.gear .dropdown-marker {
+        left: 12px;
+        right: auto; }
+      header.persist div.button-wrapper.gear button.svg-button-wrapper svg {
+        margin-left: 0;
+        right: 0; }
+    header.persist div.button-wrapper.hamburger {
+      left: 22px;
+      right: auto; }
+      header.persist div.button-wrapper.hamburger .dropdown-marker {
+        right: 14.5px;
+        left: auto; }
+      header.persist div.button-wrapper.hamburger button.svg-button-wrapper svg {
+        margin-left: 0;
+        left: 0; }
+    header.persist div.button-wrapper button.svg-button-wrapper {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      header.persist div.button-wrapper button.svg-button-wrapper svg {
+        margin-top: -9px;
+        margin-left: -9px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 18px; }
+        header.persist div.button-wrapper button.svg-button-wrapper svg path {
+          fill: black; }
+
+header.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  header.page-header .hgroup {
+    position: absolute;
+    top: 100px;
+    left: 44px; }
+    header.page-header .hgroup .etc-gallery-wrapper {
+      margin-bottom: 11px;
+      width: 401px;
+      height: 31px; }
+      header.page-header .hgroup .etc-gallery-wrapper svg {
+        width: 100%;
+        height: 100%; }
+
+.scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.page {
+  position: relative; }
+  .page .cutout {
+    background-color: transparent; }
+    .page .cutout.cutout-full {
+      height: 600px; }
+    .page .cutout.cutout-half {
+      height: 300px; }
+  .page article,
+  .page footer {
+    background-color: white;
+    padding: 44px 0; }
+    .page article h1.supertitle,
+    .page footer h1.supertitle {
+      margin-left: 44px;
+      margin-bottom: 44px; }
+    .page article ul.projects,
+    .page footer ul.projects {
+      box-sizing: border-box;
+      list-style: none;
+      padding-left: 44px;
+      width: 100%; }
+      .page article ul.projects li.project,
+      .page footer ul.projects li.project {
+        background-color: black;
+        cursor: pointer;
+        float: left;
+        margin-right: 22px;
+        margin-bottom: 22px;
+        position: relative;
+        width: 320px;
+        height: 320px; }
+        .page article ul.projects li.project:hover header,
+        .page footer ul.projects li.project:hover header {
+          color: black; }
+        .page article ul.projects li.project:hover div.project-image,
+        .page footer ul.projects li.project:hover div.project-image {
+          -webkit-filter: brightness(100%) blur(0px) grayscale(0%); }
+        .page article ul.projects li.project header,
+        .page footer ul.projects li.project header {
+          color: white;
+          font-family: "Source Sans Pro";
+          text-align: center;
+          letter-spacing: 2px;
+          position: absolute;
+          left: 0;
+          text-transform: uppercase;
+          width: 100%;
+          height: 100%;
+          z-index: 2; }
+          .page article ul.projects li.project header h1,
+          .page footer ul.projects li.project header h1 {
+            font-family: "Source Sans Pro";
+            font-size: 20px;
+            font-weight: 100;
+            padding-top: 30px; }
+          .page article ul.projects li.project header h2,
+          .page footer ul.projects li.project header h2 {
+            font-family: "Source Sans Pro";
+            font-size: 12px;
+            padding-top: 30px; }
+        .page article ul.projects li.project div.project-image,
+        .page footer ul.projects li.project div.project-image {
+          background-size: cover;
+          -webkit-filter: brightness(75%) blur(0) grayscale(75%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1; }
+      .page article ul.projects li.clear,
+      .page footer ul.projects li.clear {
+        clear: both; }
+
+.svg-wrapper {
+  width: 100%;
+  height: 100%; }
+  .svg-wrapper svg {
+    width: 100%;
+    height: 100%; }
+    .svg-wrapper svg path {
+      fill: none;
+      stroke: white;
+      stroke-width: 1px; }
+
+@media all and (max-width: 639px) {
+  div.overlays button.x {
+    top: 66px;
+    right: 22px;
+    width: 22px;
+    height: 22px; }
+  div.overlays svg line {
+    stroke-width: 4px; }
+  div.overlays .about h1.supertitle,
+  div.overlays .about h1.quasisupertitle,
+  div.overlays .colophon h1.supertitle,
+  div.overlays .colophon h1.quasisupertitle,
+  div.overlays .contact h1.supertitle,
+  div.overlays .contact h1.quasisupertitle {
+    font-size: 16.5px;
+    width: 300px; }
+  div.overlays .bios h1.supertitle {
+    margin-left: 10px; }
+  div.overlays .bios h2.subtitle {
+    margin-left: 10px; }
+  div.overlays .bios .bio h1, div.overlays .bios .bio h2 {
+    margin-left: 10px; }
+  div.overlays .bios .bio p {
+    margin-left: 10px;
+    width: 300px; }
+
+  p.narration {
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%; }
+
+  header.page-header .hgroup {
+    left: 11px; }
+    header.page-header .hgroup .etc-gallery-wrapper {
+      width: 220px;
+      height: 18px; }
+    header.page-header .hgroup h2 {
+      font-size: 11px;
+      letter-spacing: 2px; }
+
+  .page article h1.supertitle {
+    margin-left: 0;
+    text-align: center; }
+  .page article ul.projects {
+    padding-left: 0; }
+    .page article ul.projects li.project {
+      margin: 0 auto 22px auto;
+      float: none; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,499 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #dcdeea;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+h1 {
+  font-family: "Engravers MT Std";
+  font-size: 44px;
+  font-weight: 400;
+  text-transform: uppercase;
+  &.supertitle,
+  &.quasisupertitle {
+    font-family: "Source Sans Pro";
+    font-size: 33px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    a {
+      color: rgb(175,200,230);
+      font-weight: 800;
+    }
+  }
+}
+h2 {
+  font-family: "Source Sans Pro";
+  font-size: 22px;
+  font-weight: 100;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+p {
+  font-family: "PT Serif";
+  font-size: 16.5px;
+  line-height: 33px;
+  margin-bottom: 40px;
+  margin-left: 44px;
+  width: 600px;
+  a {
+    color: rgb(175,200,230);
+    font-weight: 800;
+  }
+  &.narration {
+    font-family: "Source Sans Pro";
+    font-weight: 100;
+  }
+}
+
+@media all and (max-width: 639px) {
+
+}
+div.overlays {
+  background-color: rgba(0,0,0,0.75);
+  color: rgb(255,255,255);
+  display: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  &.active {
+    display: block;
+  }
+  button.x {
+    background-color: transparent;
+    border: none;
+    font-family: "Source Sans Pro";
+    font-size: 100px;
+    font-weight: 100;
+    line-height: 100px;
+    outline: none;
+    position: absolute;
+    top: 88px;
+    right: 44px;
+    width: 100px;
+    height: 100px;
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .overlay {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .about,
+  .colophon,
+  .contact {
+    h1.supertitle,
+    h1.quasisupertitle {
+      font-size: 22px;
+      margin: 88px auto;
+      width: 600px;
+    }
+    h1.supertitle {
+      font-weight: 800;
+    }
+  }
+  .bios {
+    h1.supertitle {
+      margin-left: 44px;
+      margin-top: 88px;
+    }
+    h2.subtitle {
+      font-size: 22px;
+      font-weight: 800;
+      margin-top: 44px;
+      margin-bottom: 22px;
+      margin-left: 44px;
+    }
+    .bio {
+      margin-bottom: 44px;
+      h1, h2 {
+        margin-left: 44px;
+      }
+    }
+  }
+}
+
+
+
+header.persist {
+  background-color: rgba(255,255,255,.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  z-index: 5;
+  ul.persist-dropdown {
+    overflow: hidden;
+    position: absolute;
+    top: 44px;
+    width: 320px;
+    height: 0;
+    z-index: 3;
+    transition: all 200ms;
+    &.gear-persist-dropdown {
+      left: auto;
+      right: 0;
+      &.active {
+        height: #{(45 * 4) + 1}px;
+      }
+    }
+    &.hamburger-persist-dropdown {
+      left: 0;
+      right: auto;
+      &.active {
+        height: #{(45 * 3) + 1}px;
+      }
+    }
+    li {
+      background-color: rgba(255,255,255,.85);
+      border-bottom: 2px dotted rgb(255,255,255);
+      font-family: "Source Sans Pro";
+      font-size: 11px;
+      font-weight: 100;
+      letter-spacing: 2px;
+      line-height: 44px;
+      padding: 0 22px;
+      text-transform: uppercase;
+      width: #{320 - 44}px;
+      height: 44px;
+      &:first-child {
+        border-top: 2px dotted rgb(255,255,255);
+      }
+    }
+  }
+  .title-wrapper {
+    margin-left: -26px;
+    position: absolute;
+    top: 11px;
+    left: 50%;
+    width: 52px;
+    height: 22px;
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  div.button-wrapper {
+    position: absolute;
+    top: 0;
+    width: 44px;
+    height: 44px;
+    &.active {
+      .dropdown-marker {
+        transform: rotate(135deg);
+      }
+    }
+    .dropdown-marker {
+      border-bottom: 1px solid rgb(0,0,0);
+      border-left: 1px solid rgb(0,0,0);
+      position: absolute;
+      bottom: 14.5px;
+      transform: rotate(-45deg);
+      width: 5.5px;
+      height: 5.5px;
+      transition: transform 200ms;
+    }
+    &.gear {
+      left: auto;
+      right: 22px;
+      .dropdown-marker {
+        left: 12px;
+        right: auto;
+      }
+      button.svg-button-wrapper {
+        svg {
+          margin-left: 0;
+          right: 0;
+        }
+      }   
+    }
+    &.hamburger {
+      left: 22px;
+      right: auto;
+      .dropdown-marker {
+        right: 14.5px;
+        left: auto;
+      }
+      button.svg-button-wrapper {
+        svg {
+          margin-left: 0;
+          left: 0;
+        }
+      }
+    }
+    button.svg-button-wrapper {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      svg {
+        margin-top: -9px;
+        margin-left: -9px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 18px;
+        height: 18px;
+        path {
+          fill: rgb(0,0,0);
+        }
+      }
+    }
+  }
+}
+
+.content {
+  &.blur {
+    //filter: blur(5px);
+    //-webkit-filter: blur(10px);
+  }
+}
+
+header.page-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  .hgroup {
+    position: absolute;
+    top: 100px;
+    left: 44px;
+    .etc-gallery-wrapper {
+      margin-bottom: 11px;
+      width: 401px;
+      height: 31px;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.scroll {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.page {
+  position: relative;
+  .cutout {
+    background-color: transparent;
+    &.cutout-full {
+      height: 600px;
+    }
+    &.cutout-half {
+      height: 300px;
+    }
+  }
+  article,
+  footer {
+    background-color: rgb(255,255,255);
+    padding: 44px 0;
+    h1.supertitle {
+      margin-left: 44px;
+      margin-bottom: 44px;
+    }
+    ul.projects {
+      box-sizing: border-box;
+      list-style: none;
+      padding-left: 44px;
+      width: 100%;
+      li.project {
+        background-color: rgb(0,0,0);
+        cursor: pointer;
+        float: left;
+        margin-right: 22px;
+        margin-bottom: 22px;
+        position: relative;
+        width: 320px;
+        height: 320px;
+        &:hover {
+          header {
+            color: rgb(0,0,0);
+          }
+          div.project-image {
+            -webkit-filter: brightness(100%) blur(0px) grayscale(0%);
+          }
+        }
+        header {
+          color: rgb(255,255,255);
+          font-family: "Source Sans Pro";
+          text-align: center;
+          letter-spacing: 2px;
+          position: absolute;
+          left: 0;
+          text-transform: uppercase;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+          h1 {
+            font-family: "Source Sans Pro";
+            font-size: 20px;
+            font-weight: 100;
+            padding-top: 30px;
+          }
+          h2 {
+            font-family: "Source Sans Pro";
+            font-size: 12px;
+            padding-top: 30px;
+          }
+        }
+        div.project-image {
+          background-size: cover;
+          -webkit-filter: brightness(75%) blur(0) grayscale(75%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+        }
+      }
+      li.clear {
+        clear: both;
+      }
+    }
+  }
+}
+
+.svg-wrapper {
+  //padding-bottom: 52%;
+  width: 100%;
+  height: 100%;  
+  svg {
+    width: 100%;
+    height: 100%;
+    path {
+      fill: none;
+      stroke: rgb(255,255,255);
+      stroke-width: 1px;
+    }
+  }
+}
+
+@media all and (max-width: 639px) {
+
+  div.overlays {
+    button.x {
+      top: 66px;
+      right: 22px;
+      width: 22px;
+      height: 22px;
+    }
+    svg {
+      line {
+        stroke-width: 4px;
+      }
+    }
+    .about,
+    .colophon,
+    .contact {
+      h1.supertitle,
+      h1.quasisupertitle {
+        font-size: 16.5px;
+        width: 300px;
+      }
+    }
+    .bios {
+      h1.supertitle {
+        margin-left: 10px;
+      }
+      h2.subtitle {
+        margin-left: 10px;
+      }
+      .bio {
+        h1, h2 {
+          margin-left: 10px;
+        }
+        p {
+          margin-left: 10px;
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  p.narration {
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+  }
+  header.page-header {
+    .hgroup {
+      left: 11px;
+      .etc-gallery-wrapper {
+        width: 220px;
+        height: 18px;
+      }
+      h2 {
+        font-size: 11px;
+        letter-spacing: 2px;
+      }    
+    }
+  
+  }
+  .page {
+    article {
+      h1.supertitle {
+        margin-left: 0;
+        text-align: center;
+      }
+      ul.projects {
+        padding-left: 0;
+        li.project {
+          margin: 0 auto 22px auto;
+          float: none;
+        }
+      }
+    }
+  }
+}
