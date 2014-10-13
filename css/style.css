@@ -241,6 +241,9 @@ header.persist {
         header.persist div.button-wrapper button.svg-button-wrapper svg path {
           fill: black; }
 
+.content {
+  -webkit-overflow-scrolling: touch; }
+
 header.page-header {
   position: absolute;
   top: 0;

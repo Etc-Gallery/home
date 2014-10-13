@@ -298,6 +298,7 @@ header.persist {
 }
 
 .content {
+  -webkit-overflow-scrolling: touch;
   &.blur {
     //filter: blur(5px);
     //-webkit-filter: blur(10px);
