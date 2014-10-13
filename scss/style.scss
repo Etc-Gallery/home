@@ -33,9 +33,9 @@ h1 {
   text-transform: uppercase;
   &.supertitle,
   &.quasisupertitle {
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro Extra Light";
     font-size: 33px;
-    font-weight: 100;
+    font-weight: 400;
     letter-spacing: 3px;
     a {
       color: rgb(175,200,230);
@@ -44,14 +44,14 @@ h1 {
   }
 }
 h2 {
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro Extra Light";
   font-size: 22px;
-  font-weight: 100;
+  font-weight: 400;
   letter-spacing: 5px;
   text-transform: uppercase;
 }
 p {
-  font-family: "PT Serif";
+  font-family: "PT Serif", "Adobe Caslon Pro", "Times New Roman", "Times", sans-serif;
   font-size: 16.5px;
   line-height: 33px;
   margin-bottom: 40px;
@@ -62,8 +62,8 @@ p {
     font-weight: 800;
   }
   &.narration {
-    font-family: "Source Sans Pro";
-    font-weight: 100;
+    font-family: "Source Sans Pro Extra Light";
+    font-weight: 400;
   }
 }
 
@@ -89,9 +89,9 @@ div.overlays {
   button.x {
     background-color: transparent;
     border: none;
-    font-family: "Source Sans Pro";
+    font-family: "Source Sans Pro Extra Light";
     font-size: 100px;
-    font-weight: 100;
+    font-weight: 400;
     line-height: 100px;
     outline: none;
     position: absolute;
@@ -164,6 +164,10 @@ header.persist {
     width: 320px;
     height: 0;
     z-index: 3;
+    -webkit-transition: all 200ms;
+    -moz-transition: all 200ms;
+    -ms-transition: all 200ms;
+    -o-transition: all 200ms;
     transition: all 200ms;
     &.gear-persist-dropdown {
       left: auto;
@@ -182,9 +186,9 @@ header.persist {
     li {
       background-color: rgba(255,255,255,.85);
       border-bottom: 2px dotted rgb(255,255,255);
-      font-family: "Source Sans Pro";
+      font-family: "Source Sans Pro Extra Light";
       font-size: 11px;
-      font-weight: 100;
+      font-weight: 400;
       letter-spacing: 2px;
       line-height: 44px;
       padding: 0 22px;
@@ -215,6 +219,10 @@ header.persist {
     height: 44px;
     &.active {
       .dropdown-marker {
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
         transform: rotate(135deg);
       }
     }
@@ -223,10 +231,18 @@ header.persist {
       border-left: 1px solid rgb(0,0,0);
       position: absolute;
       bottom: 14.5px;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
       transform: rotate(-45deg);
       width: 5.5px;
       height: 5.5px;
-      transition: transform 200ms;
+      -webkit-transition: all 200ms;
+      -moz-transition: all 200ms;
+      -ms-transition: all 200ms;
+      -o-transition: all 200ms;
+      transition: all 200ms;
     }
     &.gear {
       left: auto;
@@ -283,6 +299,7 @@ header.persist {
 }
 
 .content {
+  -webkit-overflow-scrolling: touch;
   &.blur {
     //filter: blur(5px);
     //-webkit-filter: blur(10px);
@@ -363,7 +380,7 @@ header.page-header {
         }
         header {
           color: rgb(255,255,255);
-          font-family: "Source Sans Pro";
+          font-family: "Source Sans Pro Extra Light";
           text-align: center;
           letter-spacing: 2px;
           position: absolute;
@@ -373,14 +390,15 @@ header.page-header {
           height: 100%;
           z-index: 2;
           h1 {
-            font-family: "Source Sans Pro";
+            font-family: "Source Sans Pro Extra Light";
             font-size: 20px;
-            font-weight: 100;
+            font-weight: 400;
             padding-top: 30px;
           }
           h2 {
-            font-family: "Source Sans Pro";
+            font-family: "Source Sans Pro Extra Light";
             font-size: 12px;
+            font-weight: 400;
             padding-top: 30px;
           }
         }
